@@ -40,10 +40,6 @@ $pagamentoPrestador = new PrestadorPagamento;
 
 <hr>
 
-<?php // o resto é normal, continuaria funcionando sem namespace (mas é bom usar ns em tudo)
-require_once "src/Cliente.php";
-$cliente = new Cliente;
-?>
-<pre><?=var_dump($cliente)?></pre>
+
 </body>
 </html>
