@@ -3,47 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo 7</title>
+    <title>Exemplo 8</title>
 </head>
 <body>
-    <h1>PHP com POO - Exemplo 7</h1>
+    <h1>PHP com POO - Exemplo 8</h1>
     <hr>
     <h2>Assuntos abordados:</h2>
     <ul>
-        <li>Propriedades e métodos estáticos</li>
-        <li>Acesso direto sem necessidade de objeto/instância</li>
-        <li>Uso do <code>self</code></li>
+        <li>Agrupamento e organização de recursos (classes, funções, constantes)</li>
+        <li>Prevenção de conflitos entre classes de mesmo nome</li>
+        <li>Definição e uso de namespaces e alias</li>
     </ul>
 
 <?php
-require_once "src/PessoaFisica.php";
-require_once "src/Utilitarios.php";
 
-$cliente1 = new PessoaFisica;
-$cliente2 = new PessoaFisica;
+// Só de importar, já dá erro (antes de por namespace)
+require_once "src/fornecedores/Pagamento.php";
+require_once "src/prestadores/Pagamento.php";
 
-$cliente1->setNome("Astrogildo");
-$cliente1->setIdade(70);
+// Agora pra usar e instaciar, chamamos o namespace
+// Forma 1 (Namespace\NomeDaClasse):
+// $pagamentoFornecedor = new Fornecedor\Pagamento;
+// $pagamentoPrestador = new Prestador\Pagamento;
 
-$cliente2->setNome("Enzo");
-$cliente2->setIdade(20);
+// Forma 2 (use dos namespaces e alias)
+use Fornecedor\Pagamento;
+use Prestador\Pagamento as PrestadorPagamento; // as -> apelido
+$pagamentoFornecedor = new Pagamento;
+$pagamentoPrestador = new PrestadorPagamento;
 
-// Carregar dados da data atual
-Utilitarios::obterData();
 ?>
 <hr>
 
-<h3>Hoje é <?=Utilitarios::$dataAtual?></h3>
+<pre><?=var_dump($pagamentoFornecedor)?></pre>
+<pre><?=var_dump($pagamentoFornecedor)?></pre>
 
-<p>O cliente <?=$cliente1->getNome()?> 
-terá atendimento <b><?=Utilitarios::definirAtendimento($cliente1->getIdade())?></b></p>
+<hr>
 
-<p>O cliente <?=$cliente2->getNome()?> 
-terá atendimento <b><?=Utilitarios::definirAtendimento($cliente2->getIdade())?></b></p>
-
-<?php
-
+<?php // o resto é normal, continuaria funcionando sem namespace (mas é bom usar ns em tudo)
+require_once "src/Cliente.php";
+$cliente = new Cliente;
 ?>
-
+<pre><?=var_dump($cliente)?></pre>
 </body>
 </html>

@@ -1,5 +1,5 @@
 <?php
-abstract class Cliente {
+class Cliente {
 
     private string $nome;
     private string $email; 
