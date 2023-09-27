@@ -45,17 +45,22 @@ $pagamentoPrestador = new PrestadorPagamento;
 // use Tabajara\PessoaFisica as PF;
 // use Tabajara\PessoaJuridica as PJ;
 // use Tabajara\MEI;
+// use Tabajara\Utilitarios;
 
 // ou assim:
-use Tabajara\{PessoaFisica as PF, PessoaJuridica as PJ, MEI};
+use Tabajara\{PessoaFisica as PF, PessoaJuridica as PJ, MEI, Utilitarios};
 
 require_once "src/PessoaFisica.php";
 require_once "src/PessoaJuridica.php";
 require_once "src/MEI.php";
+require_once "src/Utilitarios.php";
 
 $clientePF =  new PF;
 $clientePJ = new PJ;
 $clienteMEI = new MEI;
+
+Utilitarios::obterData();
+echo Utilitarios::$dataAtual;
 ?>
 
 <pre><?=var_dump($clientePF)?></pre>
