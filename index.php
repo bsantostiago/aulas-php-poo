@@ -17,7 +17,8 @@
     <h3>EXEMPLO 1 (SEM MEXER NAS CLASSES EXISTENTES)</h3>
 
 <?php
-/* Após criar composer.json e dar um composer dumpautoload */
+/* Após criar composer.json e dar um composer dumpautoload.
+Posso tirar inclusive os requires das subclasses */
 require_once "vendor/autoload.php";
 
 // require_once "src/fornecedores/Pagamento.php";
