@@ -12,6 +12,7 @@
     <ul>
         <li>Propriedades e métodos estáticos</li>
         <li>Acesso direto sem necessidade de objeto/instância</li>
+        <li>Uso do <code>self</code></li>
     </ul>
 
 <?php
