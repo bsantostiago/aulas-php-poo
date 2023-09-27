@@ -12,6 +12,7 @@
     <ul>
         <li>Polimorfismo</li>
         <li>Sobreposição de Métodos</li>
+        <li>Uso do <code>parent</code> para acessar superclasse</li>
     </ul>
 
 <?php
