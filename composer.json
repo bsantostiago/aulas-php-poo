@@ -5,7 +5,8 @@
         "psr-4": {
             "Tabajara\\" : "src/",
             "Fornecedor\\" :"src/fornecedores/",
-            "Prestador\\" :"src/prestadores/"
+            "Prestador\\" :"src/prestadores/",
+            "Doador\\": "src/doadores"
         }
     }
 }
