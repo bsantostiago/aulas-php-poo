@@ -3,41 +3,45 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Exemplo 6</title>
+    <title>Exemplo 7</title>
 </head>
 <body>
-    <h1>PHP com POO - Exemplo 6</h1>
+    <h1>PHP com POO - Exemplo 7</h1>
     <hr>
     <h2>Assuntos abordados:</h2>
     <ul>
-        <li>Polimorfismo</li>
-        <li>Sobreposição de Métodos</li>
+        <li>Propriedades e métodos estáticos</li>
+        <li>Acesso direto sem necessidade de objeto/instância</li>
     </ul>
 
 <?php
 require_once "src/PessoaFisica.php";
-require_once "src/PessoaJuridica.php";
+require_once "src/Utilitarios.php";
 
-$clientePF = new PessoaFisica;
-$clientePJ = new PessoaJuridica;
+$cliente1 = new PessoaFisica;
+$cliente2 = new PessoaFisica;
 
-$clientePF->setNome("Fulano");
-$clientePF->setEmail("fulano@gmail.com");
-$clientePF->setIdade(20);
-$clientePF->setCpf("123.456.789-00");
+$cliente1->setNome("Astrogildo");
+$cliente1->setIdade(70);
 
-$clientePJ->setNome("Beltrano S/A");
-$clientePJ->setEmail("blabla@gmail.com");
-$clientePJ->setAnoFundacao(2000);
-$clientePJ->setCnpj("32.088.0001/000.41");
-$clientePJ->setNomeFantasia("Bla Bla Informática");
+$cliente2->setNome("Enzo");
+$cliente2->setIdade(20);
 
+// Carregar dados da data atual
+Utilitarios::obterData();
 ?>
-
 <hr>
+
+<h3>Hoje é <?=Utilitarios::$dataAtual?></h3>
+
+<p>O cliente <?=$cliente1->getNome()?> 
+terá atendimento <b><?=Utilitarios::definirAtendimento($cliente1->getIdade())?></b></p>
+
+<p>O cliente <?=$cliente2->getNome()?> 
+terá atendimento <b><?=Utilitarios::definirAtendimento($cliente2->getIdade())?></b></p>
+
 <?php
-$clientePF->exibirDados();
-$clientePJ->exibirDados();
+
 ?>
 
 </body>
