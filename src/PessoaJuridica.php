@@ -1,4 +1,5 @@
 <?php
+namespace Tabajara;
 require_once "Cliente.php";
 class PessoaJuridica extends Cliente
 {

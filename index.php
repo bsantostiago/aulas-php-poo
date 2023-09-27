@@ -40,6 +40,27 @@ $pagamentoPrestador = new PrestadorPagamento;
 <hr>
 
 <h3>EXEMPLO 2 (NAMESPACE NAS CLASSES EXISTENTES)</h3>
+<?php
+
+// use Tabajara\PessoaFisica as PF;
+// use Tabajara\PessoaJuridica as PJ;
+// use Tabajara\MEI;
+
+// ou assim:
+use Tabajara\{PessoaFisica as PF, PessoaJuridica as PJ, MEI};
+
+require_once "src/PessoaFisica.php";
+require_once "src/PessoaJuridica.php";
+require_once "src/MEI.php";
+
+$clientePF =  new PF;
+$clientePJ = new PJ;
+$clienteMEI = new MEI;
+?>
+
+<pre><?=var_dump($clientePF)?></pre>
+<pre><?=var_dump($clientePJ)?></pre>
+<pre><?=var_dump($clienteMEI)?></pre>
 
 </body>
 </html>

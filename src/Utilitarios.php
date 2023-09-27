@@ -1,4 +1,5 @@
 <?php
+namespace Tabajara;
 class Utilitarios {
     /* Erro, pois Propriedades estáticas só podem ser inicializadas com valores constantes ou literais, não com expressões de função ou variáveis. */
     //public static int $dataAtual = date("d/M/Y");
