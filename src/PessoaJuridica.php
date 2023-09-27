@@ -1,6 +1,7 @@
 <?php
 require_once "Cliente.php";
-class PessoaJuridica extends Cliente {
+class PessoaJuridica extends Cliente
+{
     private int $anoFundacao;
     private string $cnpj;
     private string $nomeFantasia;
@@ -11,13 +12,17 @@ class PessoaJuridica extends Cliente {
         $this->setSituacao("em análise");
     }
 
-    public function exibirDados(){
+    public function exibirDados(): void
+    {
         echo "<p><i>Este é o método exibirDados() da classe PessoaJuridica</i></p>";
-        echo "<h3>".$this->getNome()."</h3>";
+        echo "<h3>" . $this->getNome() . "</h3>";
         echo "<ul>";
-        echo "<li>Ano de fundação: ".$this->anoFundacao."</li>";
-        echo "<li>Situação: ".$this->getSituacao()."</li>";
+        echo "<li>Ano de fundação: " . $this->anoFundacao . "</li>";
+        echo "<li>Situação: " . $this->getSituacao() . "</li>";
         echo "</ul>";
+
+        // se quiseremos forçar a execução também do método genérico da superclasse
+        parent::exibirDados();
     }
 
 
@@ -40,7 +45,7 @@ class PessoaJuridica extends Cliente {
         return $this->cnpj;
     }
 
-    
+
     public function setCnpj(string $cnpj): self
     {
         $this->cnpj = $cnpj;
@@ -54,7 +59,7 @@ class PessoaJuridica extends Cliente {
         return $this->nomeFantasia;
     }
 
-    
+
     public function setNomeFantasia(string $nomeFantasia): self
     {
         $this->nomeFantasia = $nomeFantasia;

@@ -6,7 +6,7 @@ abstract class Cliente {
     private string $senha;
     private string $situacao = "a definir";
 
-    public function exibirDados(){
+    public function exibirDados():void {
         echo "<p><i>Este é o método exibirDados() da classe Cliente</i></p>";
         echo "<h3>".$this->getNome()."</h3>";
         echo "<p>E-mail: ".$this->email."</p>";
