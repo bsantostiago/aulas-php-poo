@@ -15,8 +15,9 @@
         <li>Definição e uso de namespaces e alias</li>
     </ul>
 
-<?php
+    <h3>EXEMPLO 1 (SEM MEXER NAS CLASSES EXISTENTES)</h3>
 
+<?php
 // Só de importar, já dá erro (antes de por namespace)
 require_once "src/fornecedores/Pagamento.php";
 require_once "src/prestadores/Pagamento.php";
@@ -33,13 +34,12 @@ $pagamentoFornecedor = new Pagamento;
 $pagamentoPrestador = new PrestadorPagamento;
 
 ?>
-<hr>
-
 <pre><?=var_dump($pagamentoFornecedor)?></pre>
 <pre><?=var_dump($pagamentoFornecedor)?></pre>
 
 <hr>
 
+<h3>EXEMPLO 2 (NAMESPACE NAS CLASSES EXISTENTES)</h3>
 
 </body>
 </html>
