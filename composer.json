@@ -1,0 +1,11 @@
+{
+    "name" : "tiago/aulas-php-poo",
+    "description" : "Exemplo PHP com POO, Composer e Autoload de Classes",
+    "autoload" : {
+        "psr-4": {
+            "Tabajara\\" : "src/",
+            "Fornecedor\\" :"src/fornecedores/",
+            "Prestador\\" :"src/prestadores/"
+        }
+    }
+}

@@ -17,8 +17,11 @@
     <h3>EXEMPLO 1 (SEM MEXER NAS CLASSES EXISTENTES)</h3>
 
 <?php
-require_once "src/fornecedores/Pagamento.php";
-require_once "src/prestadores/Pagamento.php";
+/* Após criar composer.json e dar um composer dumpautoload */
+require_once "vendor/autoload.php";
+
+// require_once "src/fornecedores/Pagamento.php";
+// require_once "src/prestadores/Pagamento.php";
 
 use Fornecedor\Pagamento;
 use Prestador\Pagamento as PrestadorPagamento; // as -> apelido
@@ -34,11 +37,6 @@ $pagamentoPrestador = new PrestadorPagamento;
 <h3>EXEMPLO 2 (NAMESPACE NAS CLASSES EXISTENTES)</h3>
 <?php
 use Tabajara\{PessoaFisica as PF, PessoaJuridica as PJ, MEI, Utilitarios};
-
-require_once "src/PessoaFisica.php";
-require_once "src/PessoaJuridica.php";
-require_once "src/MEI.php";
-require_once "src/Utilitarios.php";
 
 $clientePF =  new PF;
 $clientePJ = new PJ;
